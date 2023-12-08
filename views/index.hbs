@@ -1,0 +1,33 @@
+<div class="author">
+  <h1 class="author__heading">Hi, I am Pavneet.</h1>
+  <p class="author__body">Student and aspiring web developer</p>
+   <p class="author__body">A platform by our team for all learning enthusiasts to explore, grow, and thrive </p>
+</div>
+
+<img src="/images/pic_1.jpg" alt="person looking out through window" class="hero-image" width="981" height="528">
+
+<section class="articles">
+  <h2 class="articles__heading">Latest Posts by our team</h2>
+
+<ul class="article-ul">
+  {{#each data}}
+        <li>
+          <a href="/post/{{ _id }}">
+            <span>{{ title }}</span>
+            <span class="article-list__date">{{ formattedCreatedAt }}</span>
+          </a>
+        </li>
+      {{/each}}
+</ul>
+
+
+
+
+  
+ 
+
+  
+
+
+
+</section>

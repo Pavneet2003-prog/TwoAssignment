@@ -1,0 +1,37 @@
+<!-- admin-posts.hbs -->
+<div> <h3>Add a new admin!</h3>
+
+<form action="/register" method="POST">
+
+  <label for="username"><b>Username</b></label>
+  <input type="text" placeholder="Enter Username" name="username">
+
+  <label for="password"><b>Password</b></label>
+  <input type="password" placeholder="Enter Password" name="password">
+
+  <input type="submit" value="Register" class="btn">
+
+</form>
+</div>
+
+<div class="admin-title">
+  <h2>Posts</h2>
+  <a href="/add-post" class="button"> + Add New</a>
+</div>
+
+<ul class="admin-posts">
+  {{#each data}}
+    <li>
+      <a href="/post/{{this._id}}">
+        {{this.title}} &nearr;
+      </a>
+      <div class="admin-post-controls">
+        <a href="/edit-post/{{this._id}}" class="btn">Edit</a>
+
+        <form action="/delete-post/{{this._id}}?_method=DELETE" method="POST">
+          <input type="submit" value="Delete" class="btn-delete btn">
+        </form>
+      </div>
+    </li>
+  {{/each}}
+</ul>
